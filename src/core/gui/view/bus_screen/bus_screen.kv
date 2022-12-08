@@ -1,4 +1,7 @@
 <BusScreenView>:
+    id: bus_screen_root
+    buses: buses
+
     MDCard:
         padding: [10, 10, 10, 10]
         orientation: "vertical"
@@ -30,16 +33,12 @@
         ScrollView:
             size: self.size
 
-            GridLayout:
+            MDGridLayout:
+                bus_screen_root: bus_screen_root
+                id: buses
                 cols: 1
                 size_hint_y: None
-                row_default_height: '50dp'
-                row_force_default: True
+                row_default_height: '300dp'
+                adaptive_height:True
                 spacing: 5, 5
                 padding: 10, 10, 10, 10
-
-                Button:
-                    text: "1"
-
-                Button:
-                    text: "2"

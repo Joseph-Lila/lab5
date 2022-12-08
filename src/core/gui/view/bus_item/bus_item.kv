@@ -1,39 +1,60 @@
 <BusItem>:
-    item_id: item_id
     fio: fio
     bus_number: bus_number
     route_number: route_number
     brand: brand
     creation_year: creation_year
     vehicle: vehicle
-    cols: 2
-    rows: 7
+    md_bg_color: [0, 0, 0, .5]
 
-    MDTExtField:
-        id: item_id
-        hint_text: "item_id"
+    BoxLayout:
+        spacing: 10
+        padding: 10
+        orientation: "vertical"
 
-    MDLabel:
-        id: fio
-        hint_text: "fio"
+        GridLayout:
+            cols: 2
+            rows: 1
+            size_hint_y: .2
+            spacing: 10
+            padding: 10
 
-    MDLabel:
-        id: bus_number
-        hint_text: "bus_number"
+            AnchorLayout:
+                MDRaisedButton:
+                    text: "Edit"
+                    on_press: root.parent.bus_screen_root.presenter.on_edit(root.item_id, fio.text, bus_number.text, route_number.text, brand.text, creation_year.text, vehicle.text)
 
-    MDLabel:
-        id: route_number
-        hint_text: "route_number"
+            AnchorLayout:
+                MDRaisedButton:
+                    text: "Delete"
+                    md_bg_color: "red"
+                    on_press: root.parent.bus_screen_root.presenter.on_delete(root.item_id)
 
-    MDLabel:
-        id: brand
-        hint_text: "brand"
+        GridLayout:
+            cols: 2
+            rows: 6
+            spacing: 10
 
-    MDLabel:
-        id: creation_year
-        hint_text: "creation_year"
+            MDTextField:
+                id: fio
+                hint_text: "fio"
 
-    MDLabel:
-        id: vehicle
-        hint_text: "vehicle"
+            MDTextField:
+                id: bus_number
+                hint_text: "bus_number"
 
+            MDTextField:
+                id: route_number
+                hint_text: "route_number"
+
+            MDTextField:
+                id: brand
+                hint_text: "brand"
+
+            MDTextField:
+                id: creation_year
+                hint_text: "creation_year"
+
+            MDTextField:
+                id: vehicle
+                hint_text: "vehicle"

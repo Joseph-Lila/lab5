@@ -1,3 +1,5 @@
+import copy
+
 from src.core.domain.model import Bus
 from src.core.gui.model.publisher import Publisher
 from src.core.gui.view.bus_item.bus_item import BusItem
@@ -9,19 +11,15 @@ class BusScreenModel(Publisher):
     def __init__(self):
         super().__init__()
         self.data = []
-        self.widgets = []
 
     def add_bus(self, bus: Bus):
-        self.data.append(Bus)
-        self.widgets.append(
-            BusItem(
-                item_id=Bus.item_id,
-                fio=Bus.fio,
-                bus_number=Bus.bus_number,
-                route_number=Bus.route_number,
-                brand=Bus.brand,
-                creation_year=Bus.creation_year,
-                vehicle=Bus.vehicle
-            )
-        )
-        self.notify_observers()
+        self.data.append(copy.copy(bus))
+        self.notify_observers(new_one=self.data[-1])
+
+    def send_list_contains_substring(self, value):
+        list_contains_substring = [bus for bus in self.data if value.lower() in bus.fio.lower()]
+        self.notify_observers(list_contains_substring=list_contains_substring)
+
+    def list(self, collection: list):
+        for item in collection:
+            self.add_bus(item)

@@ -20,6 +20,7 @@ class BusScreenPresenter:
         self.model = model
         self.uow: AbstractUnitOfWork = uow
         self.view = BusScreenView(presenter=self, model=self.model)
+        self.list()
 
     def get_screen(self):
         """ The method creates get the view. """
@@ -27,5 +28,15 @@ class BusScreenPresenter:
         return self.view
 
     def on_text_search(self, instance, value):
-        print(value)
+        self.model.send_list_contains_substring(value)
 
+    def list(self):
+        with self.uow:
+            collection = self.uow.buses.list()
+            self.model.list(collection)
+
+    def on_edit(self, item_id, fio, bus_number, route_number, brand, creation_year, vehicle):
+        print(item_id)
+
+    def on_delete(self, item_id):
+        print(item_id)

@@ -14,6 +14,7 @@ from src.core.gui.presenter.train_screen import TrainScreenPresenter
 from src.core.gui.view.home_screen.home_screen import HomeScreenView
 from src.core.service_layer.unit_of_work.sqlalchemy_unit_of_work import SqlAlchemyUnitOfWork
 
+
 SCREENS = {
     # name screen
     "main container": {

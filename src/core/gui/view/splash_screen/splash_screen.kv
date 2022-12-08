@@ -1,0 +1,21 @@
+<SplashScreenView>:
+    on_enter: progress.start()
+
+    AnchorLayout:
+
+        Image:
+            source: 'assets/images/saul_goodman_saul.gif'
+            anim_delay: .07
+            allow_stretch: True
+            anim_reset: True
+
+    AnchorLayout:
+        anchor_y: 'top'
+        padding: ['30dp', 0, '30dp', 0]
+
+        MDProgressBar:
+            id: progress
+            type: 'indeterminate'
+            running_duration: 1
+            catching_duration: 1
+            color: [246/255, 53/255, 244/255, 255/255]

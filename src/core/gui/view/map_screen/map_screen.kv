@@ -1,0 +1,18 @@
+#:import MapView kivy_garden.mapview
+#:import MapMarker kivy_garden.mapview
+
+<MapScreenView>:
+    my_marker: my_marker
+
+    MapView:
+        lat: 52.405806
+        lon: 30.938826
+        zoom: 12
+
+        MapMarker:
+            lat: 52.433972643600406
+            lon: 30.99330579640694
+
+        MapMarker:
+            id: my_marker
+            source: "assets/images/pig.png"

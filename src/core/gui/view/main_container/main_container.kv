@@ -1,0 +1,33 @@
+<MainContainerView>:
+    nav_rail: nav_rail
+    md_bg_color: 93/255, 93/255, 67/255, 255/255
+    spacing: "12dp"
+    padding: "12dp"
+    pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDNavigationRail:
+        id: nav_rail
+        anchor: "top"
+        material_style: "M3"
+        type: "selected"
+        md_bg_color: 22/255, 22/255, 14/255, 255/255
+        selected_color_background: 70/255, 70/255, 41/255, 255/255
+        icon_color_item_normal: 231/255, 229/255, 192/255, 255/255
+        icon_color_item_active: 231/255, 229/255, 192/255, 255/255
+
+        MDNavigationRailFabButton:
+            icon: "shield-account"
+            md_bg_color: 32/255, 77/255, 62/255, 255/255
+            on_press: root.presenter.on_press_home_btn_item()
+
+        MDNavigationRailItem:
+            icon: "map"
+            on_press: root.presenter.on_press_nav_item('map screen')
+
+        MDNavigationRailItem:
+            icon: "bus-multiple"
+            on_press: root.presenter.on_press_nav_item('bus screen')
+
+        MDNavigationRailItem:
+            icon: "train"
+            on_press: root.presenter.on_press_nav_item('train screen')

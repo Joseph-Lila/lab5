@@ -1,6 +1,6 @@
 """ Module core.service_layer.observer """
 
-from src.core.domain.event.event import Event
+from src.core.domain.events import Event
 
 
 class Subscriber:

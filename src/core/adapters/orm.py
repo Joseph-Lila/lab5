@@ -2,8 +2,7 @@
 from sqlalchemy import Column, Float, Integer, MetaData, String, Table
 from sqlalchemy.orm import mapper
 
-from src.core.domain.entities.bus import Bus
-from src.core.domain.entities.train import Train
+from src.core.domain import model
 
 metadata = MetaData()
 
@@ -31,6 +30,5 @@ train = Table(
 
 def start_mappers():
     """ Method to map entities with tables. """
-    mapper(Bus, bus)
-    mapper(Train, train)
-
+    mapper(model.Bus, bus)
+    mapper(model.Train, train)

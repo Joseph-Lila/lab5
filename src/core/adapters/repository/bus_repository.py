@@ -2,7 +2,7 @@
 from typing import List, Optional
 
 from src.core.adapters.repository.abstract_repository import AbstractRepository
-from src.core.domain.entities.bus import Bus
+from src.core.domain.model import Bus
 
 
 class BusRepository(AbstractRepository):
@@ -20,9 +20,9 @@ class BusRepository(AbstractRepository):
         return self.session.query(Bus).all()
 
     def update(self, item: Bus) -> None:
-        self.session.query(Bus).filter_by(item_id == item.item_id).update(
+        self.session.query(Bus).filter_by(item_id=item.item_id).update(
             fio=item.fio, bus_number=item.bus_number, route_number=item.route_number,
             brand=item.brand, creation_year=item.creation_year, vehicle=item.vehicle)
 
     def delete(self, item: Bus) -> None:
-        self.session.query(Bus).filter_by(item_id == item.item_id).delete()
+        self.session.query(Bus).filter_by(item_id=item.item_id).delete()

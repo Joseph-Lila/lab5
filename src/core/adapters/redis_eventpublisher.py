@@ -4,7 +4,7 @@ from dataclasses import asdict
 import redis
 
 from src.core import config
-from src.core.domain.event.event import Event
+from src.core.domain.events import Event
 
 
 logger = logging.getLogger(__name__)

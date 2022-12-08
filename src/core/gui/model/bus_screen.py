@@ -1,4 +1,4 @@
-from src.core.domain.entities.bus import Bus
+from src.core.domain.model import Bus
 from src.core.gui.model.publisher import Publisher
 from src.core.gui.view.bus_item.bus_item import BusItem
 

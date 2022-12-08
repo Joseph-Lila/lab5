@@ -1,8 +1,7 @@
 from __future__ import annotations
-import logging
 from typing import Callable, Dict, List, Union, Type, TYPE_CHECKING
-from src.core.domain.event.event import Event
-from src.core.domain.command.command import Command
+from src.core.domain.events import Event
+from src.core.domain.commands import Command
 
 if TYPE_CHECKING:
     from src.core.service_layer.unit_of_work.abstract_unit_of_work import AbstractUnitOfWork

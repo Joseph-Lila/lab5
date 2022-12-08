@@ -12,3 +12,12 @@ class Bus:
     brand: str
     creation_year: int
     vehicle: float
+
+
+@dataclass
+class Train:
+    """ Dataclass representing a train """
+    item_id: int = field(init=False)
+    title: str
+    departure: str
+    destination: str

@@ -46,13 +46,13 @@ class BusScreenPresenter:
         with self.uow:
             self.uow.buses.update(bus)
             self.uow.commit()
-        self.model.edit(copy.copy(bus))
+            self.model.edit(copy.copy(bus))
 
     def on_delete(self, item_id: int):
         with self.uow:
             self.uow.buses.delete(item_id)
             self.uow.commit()
-        self.model.delete(item_id)
+            self.model.delete(item_id)
 
     def create_bus(self, popup_cls, *args):
         popup_cls = popup_cls[0]
@@ -68,7 +68,7 @@ class BusScreenPresenter:
         with self.uow:
             self.uow.buses.add(bus)
             self.uow.commit()
-        self.model.add_bus(bus)
+            self.model.add_bus(copy.copy(bus))
 
     def route_number(self, popup_cls, *args):
         popup_cls = popup_cls[0]

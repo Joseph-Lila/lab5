@@ -1,6 +1,9 @@
 """ Module core.service_layer.unit_of_work.abstract_unit_of_work """
 import abc
 from pathlib import Path
+
+from sqlalchemy.pool import NullPool
+
 from src.core.adapters.repository.abstract_repository import AbstractRepository
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -36,6 +39,6 @@ class AbstractUnitOfWork(abc.ABC):
 
 DEFAULT_SESSION_FACTORY = sessionmaker(
     bind=create_engine(
-        config.get_sqlite_uri(),
+        config.get_sqlite_uri()
     )
 )

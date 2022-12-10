@@ -1,11 +1,10 @@
 from kivy.clock import Clock
-from kivy.uix.button import Button
 from kivy.uix.screenmanager import ScreenManager
-from kivymd.app import MDApp
-from src.core.gui.view.screens import SCREENS, ScreensGenerator
 from kivy.utils import platform
-from src.core.adapters.orm import start_mappers
+from kivymd.app import MDApp
 
+from src.core.adapters.orm import start_mappers
+from src.core.gui.view.screens import ScreensGenerator
 
 if platform == 'android':
     from android.permissions import request_permissions, Permission
@@ -25,7 +24,7 @@ start_mappers()
 
 
 class MyMVPApp(MDApp):
-    title = "LLK Railway Station"
+    title = "LLK Bus Station"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

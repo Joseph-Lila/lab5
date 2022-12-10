@@ -5,12 +5,10 @@ from src.core.gui.model.main_container import MainContainerModel
 from src.core.gui.model.map_screen import MapScreenModel
 from src.core.gui.model.splash_screen import SplashScreenModel
 from src.core.gui.model.bus_screen import BusScreenModel
-from src.core.gui.model.train_screen import TrainScreenModel
 from src.core.gui.presenter.main_container import MainContainerPresenter
 from src.core.gui.presenter.map_screen import MapScreenPresenter
 from src.core.gui.presenter.splash_screen import SplashScreenPresenter
 from src.core.gui.presenter.bus_screen import BusScreenPresenter
-from src.core.gui.presenter.train_screen import TrainScreenPresenter
 from src.core.gui.view.home_screen.home_screen import HomeScreenView
 from src.core.service_layer.unit_of_work.sqlalchemy_unit_of_work import SqlAlchemyUnitOfWork
 
@@ -32,10 +30,6 @@ SCREENS = {
     "bus screen": {
         "model": BusScreenModel,
         "presenter": BusScreenPresenter
-    },
-    "train screen": {
-        "model": TrainScreenModel,
-        "presenter": TrainScreenPresenter
     }
 }
 
@@ -62,7 +56,6 @@ class ScreensGenerator:
             [
                 'map screen',
                 'bus screen',
-                'train screen',
             ]
         )
         main_container_view.add_widget(main_container_view.screen_master)

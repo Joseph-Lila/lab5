@@ -37,14 +37,14 @@ version = 0.0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.1.0,kivymd==1.1.1,sdl2_ttf,pillow==9.2.0,kivy_garden.mapview==1.0.6,numpy,openssl,requests,charset_normalizer,chardet,idna,urllib3,certifi,jnius,kivmob,https://github.com/HyTurtle/plyer/archive/master.zip,SQLAlchemy==1.4.43,Kivy-Garden==0.1.5
+requirements = python3,kivy==2.1.0,kivymd==1.1.1,sdl2_ttf,pillow==9.2.0,kivy_garden.mapview==1.0.6,numpy,openssl,requests,charset_normalizer,chardet,idna,urllib3,certifi,jnius,kivmob,https://github.com/HyTurtle/plyer/archive/master.zip,SQLAlchemy==1.4.43,Kivy-Garden==0.1.5,pymysql,registry,python-dotenv==0.21.0,sqlalchemy-utils,Faker==15.3.4,dateutil
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = assets/images/photo_2022-01-23_15-14-24.jpg
+presplash.filename = assets/images/main.jpeg
 
 # (str) Icon of the application
 icon.filename = assets/images/logo.png

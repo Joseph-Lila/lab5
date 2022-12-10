@@ -12,4 +12,4 @@ if dotenv_path.exists():
 
 def get_sqlite_uri():
     """ Returns sqlite database uri """
-    return os.environ.get('SQLITE_DB', 'sqlite://')
+    return "sqlite:///assets/databases/sqlite.db"

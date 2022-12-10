@@ -1,7 +1,7 @@
 from kivy.properties import ObjectProperty
+from kivy.utils import platform
 from kivy_garden.mapview import MapMarker, MapView
 from kivymd.uix.screen import MDScreen
-from kivy.utils import platform
 from plyer import gps
 
 from src.core.gui.view.subscriber import Subscriber

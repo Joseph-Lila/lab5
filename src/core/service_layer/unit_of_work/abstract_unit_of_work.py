@@ -1,14 +1,11 @@
 """ Module core.service_layer.unit_of_work.abstract_unit_of_work """
 import abc
-from pathlib import Path
 
-from sqlalchemy.pool import NullPool
-
-from src.core.adapters.repository.abstract_repository import AbstractRepository
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from src.core import config
+from src.core.adapters.repository.abstract_repository import AbstractRepository
 
 
 class AbstractUnitOfWork(abc.ABC):

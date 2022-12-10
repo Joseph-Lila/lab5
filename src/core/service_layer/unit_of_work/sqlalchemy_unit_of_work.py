@@ -6,12 +6,13 @@ from src.core.service_layer.unit_of_work.abstract_unit_of_work import (
 
 class SqlAlchemyUnitOfWork(AbstractUnitOfWork):
     """ SqlAlchemyUnitOfWork implementation for unit of work pattern """
+
     def __init__(self, session_factory=DEFAULT_SESSION_FACTORY):
         super().__init__()
         self.session_factory = session_factory
 
     def __enter__(self):
-        self.session = self.session_factory()
+        self.session = self.session_factory(expire_on_commit=False)
         self.buses = BusRepository(self.session)
         self.trains = TrainRepository(self.session)
         return super().__enter__()

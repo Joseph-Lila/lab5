@@ -1,0 +1,70 @@
+<DialogRouteNumber@BoxLayout>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    route_number: route_number
+
+    MDTextField:
+        id: route_number
+        hint_text: "route_number"
+        write_tab: False
+
+
+<DialogCreateBus@BoxLayout>:
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: "120dp"
+    fio: fio
+    bus_number: bus_number
+    route_number: route_number
+    brand: brand
+    creation_year: creation_year
+    vehicle: vehicle
+
+    ScrollView:
+        size: self.size
+
+        MDGridLayout:
+            cols: 1
+            size_hint_y: None
+            row_default_height: '60dp'
+            adaptive_height:True
+            spacing: 5, 5
+            padding: 10, 10, 10, 10
+
+            MDTextField:
+                id: fio
+                hint_text: "fio"
+                write_tab: False
+
+            MDTextField:
+                id: bus_number
+                hint_text: "bus_number"
+                write_tab: False
+
+            MDTextField:
+                id: route_number
+                hint_text: "route_number"
+                write_tab: False
+
+            MDTextField:
+                id: brand
+                hint_text: "brand"
+                write_tab: False
+
+            MDTextField:
+                id: creation_year
+                hint_text: "creation_year"
+                write_tab: False
+
+            MDTextField:
+                id: vehicle
+                hint_text: "vehicle"
+                write_tab: False
+
+<OKButton@MDFlatButton>:
+    text: "OK"
+    theme_text_color: "Custom"
+    text_color: self.theme_cls.primary_color

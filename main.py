@@ -40,10 +40,10 @@ class MyMVPApp(MDApp):
         return self.sm
 
     def on_start(self):
-        Clock.schedule_once(self.login, 10)
+        Clock.schedule_once(self.login, 18)
+        self.sm.add_widget(ScreensGenerator().generate_resulted_view())
 
     def login(self, *args):
-        self.sm.add_widget(ScreensGenerator().generate_resulted_view())
         self.sm.current = 'main container'
 
 

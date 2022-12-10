@@ -1,9 +1,11 @@
-from src.core.gui.model.publisher import Publisher
+import atexit
 import pathlib
 import shutil
-import atexit
-from plyer import gps
+
 from kivy.utils import platform
+from plyer import gps
+
+from src.core.gui.model.publisher import Publisher
 
 
 def clear_cache_dir():

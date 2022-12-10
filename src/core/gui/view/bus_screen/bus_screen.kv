@@ -1,6 +1,7 @@
 <BusScreenView>:
     id: bus_screen_root
     buses: buses
+    cog: cog
 
     MDCard:
         padding: [10, 10, 10, 10]
@@ -28,7 +29,9 @@
                     on_text: root.presenter.on_text_search(self, self.text)
 
                 MDIconButton:
+                    id: cog
                     icon: "cog-box"
+                    on_release: root.menu.open()
 
         ScrollView:
             size: self.size

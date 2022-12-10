@@ -5,25 +5,44 @@
     padding: "12dp"
     pos_hint: {"center_x": .5, "center_y": .5}
 
-    MDNavigationRail:
+    MDCard:
         id: nav_rail
-        anchor: "top"
+        orientation: "vertical"
+        size_hint_x: None
+        width: "80dp"
+        padding: "12dp"
         material_style: "M3"
-        type: "unselected"
         md_bg_color: 22/255, 22/255, 14/255, 255/255
         selected_color_background: 70/255, 70/255, 41/255, 255/255
         icon_color_item_normal: 231/255, 229/255, 192/255, 255/255
         icon_color_item_active: 231/255, 229/255, 192/255, 255/255
 
-        MDNavigationRailFabButton:
-            icon: "shield-account"
-            md_bg_color: 32/255, 77/255, 62/255, 255/255
-            on_press: root.presenter.on_press_home_btn_item()
+        AnchorLayout:
 
-        MDNavigationRailItem:
-            icon: "map"
-            on_press: root.presenter.on_press_nav_item('map screen')
+            MDFloatingActionButton:
+                icon: "shield-account"
+                material_style: "M3"
+                md_bg_color: 32/255, 77/255, 62/255, 255/255
+                on_press: root.presenter.on_press_home_btn_item()
 
-        MDNavigationRailItem:
-            icon: "bus-multiple"
-            on_press: root.presenter.on_press_nav_item('bus screen')
+        BoxLayout:
+            orientation: "vertical"
+            spacing: "16dp"
+
+            AnchorLayout:
+
+                MDIconButton:
+                    icon: "map"
+                    material_style: "M3"
+                    md_bg_color: 70/255, 70/255, 41/255, 255/255
+                    on_press: root.presenter.on_press_nav_item('map screen')
+
+            AnchorLayout:
+
+                MDIconButton:
+                    icon: "bus-multiple"
+                    material_style: "M3"
+                    md_bg_color: 70/255, 70/255, 41/255, 255/255
+                    on_press: root.presenter.on_press_nav_item('bus screen')
+
+            Widget:

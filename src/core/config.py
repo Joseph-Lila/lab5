@@ -1,10 +1,11 @@
 """ Module core.config """
-import os
 import pathlib
 
 from dotenv import load_dotenv
 
-dotenv_path = pathlib.Path(__file__).parent.parent.parent / '.env'
+app_path = pathlib.Path(__file__).parent.parent.parent
+dotenv_path = app_path / '.env'
+database_path = app_path / 'assets' / 'databases' / 'sqlite.db'
 
 if dotenv_path.exists():
     load_dotenv(dotenv_path)
@@ -12,4 +13,4 @@ if dotenv_path.exists():
 
 def get_sqlite_uri():
     """ Returns sqlite database uri """
-    return "sqlite:///assets/databases/sqlite.db"
+    return f"sqlite:///{database_path}"

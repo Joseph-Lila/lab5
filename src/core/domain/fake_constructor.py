@@ -1,7 +1,9 @@
 import random
 
 import faker
+
 from src.core.domain.model import Bus
+
 fake = faker.Faker()
 
 

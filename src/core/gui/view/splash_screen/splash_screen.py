@@ -1,5 +1,6 @@
 from kivy.properties import ObjectProperty
 from kivymd.uix.screen import MDScreen
+
 from src.core.gui.view.subscriber import Subscriber
 
 
